@@ -1,0 +1,18 @@
+<% if current_user.present? && current_user.provider.eql?("google_oauth2") %>
+	<table>
+		<thead>
+			<th>Name</th>
+			<th>Email</th>
+			<th>Mobile</th>
+		</thead>
+		<tbody>
+			<% if @response.try(:connections).present? %>
+				<%= render partial: "google_table", collection: @response.connections, as: :connection %>
+			<% else %>
+				<tr>
+					<td style="text-align: center;", colspan="3"> Data Not available </td>
+				</tr>
+			<% end %>
+		</tbody>
+	</table>
+<% end %>

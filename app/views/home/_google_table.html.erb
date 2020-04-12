@@ -1,0 +1,5 @@
+<tr>
+	<td><%= connection.names.first.display_name %></td>
+	<td style="text-align: center;"><%= connection.email_addresses.try(:first).try(:value).present? ? connection.email_addresses.try(:first).try(:value) : '-' %></td>
+	<td style="text-align: center;"><%= connection.phone_numbers.try(:first).try(:canonical_form).present? ? connection.phone_numbers.try(:first).try(:canonical_form) : '' %></td>
+</tr>
