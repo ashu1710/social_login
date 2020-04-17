@@ -35,6 +35,9 @@ Devise.setup do |config|
 
   config.omniauth :github, ENV['github_id'], ENV['github_secret']
 
+  config.omniauth :twitter, ENV['twitter_id'], ENV['twitter_secret']
+ 
+
   # Configure the class responsible to send e-mails.
   # config.mailer = 'Devise::Mailer'
 

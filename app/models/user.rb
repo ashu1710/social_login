@@ -3,7 +3,7 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   	devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable,
-         :omniauthable, :omniauth_providers => [:google_oauth2, :facebook, :linkedin, :github]
+         :omniauthable, :omniauth_providers => [:google_oauth2, :facebook, :linkedin, :github, :twitter]
 
 	def self.new_with_session(params, session)
 		super.tap do |user|

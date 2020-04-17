@@ -25,6 +25,7 @@ gem 'omniauth'
 gem 'omniauth-instagram'
 gem 'omniauth-github'
 gem 'omniauth-linkedin'
+gem 'omniauth-twitter'
 gem 'httparty'
 
 # See https://github.com/rails/execjs#readme for more supported runtimes
