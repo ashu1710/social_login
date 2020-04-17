@@ -29,6 +29,12 @@ Devise.setup do |config|
   }
   config.omniauth :facebook, ENV['facebook_id'], ENV['facebook_secret'],callback_url: ENV['facebook_callback']
 
+  config.omniauth :linkedin, ENV['linkedin_id'], ENV['linkedin_secret']
+
+  config.omniauth :instagram, ENV['instagram_id'], ENV['instagram_secret']
+
+  config.omniauth :github, ENV['github_id'], ENV['github_secret']
+
   # Configure the class responsible to send e-mails.
   # config.mailer = 'Devise::Mailer'
 

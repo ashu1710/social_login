@@ -19,7 +19,14 @@ gem 'google-api-client'
 gem 'omniauth-facebook'
 gem "koala"
 gem 'pry'
+gem 'therubyracer'
 gem 'dotenv-rails'
+gem 'omniauth'
+gem 'omniauth-instagram'
+gem 'omniauth-github'
+gem 'omniauth-linkedin'
+gem 'httparty'
+
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'mini_racer', platforms: :ruby
 

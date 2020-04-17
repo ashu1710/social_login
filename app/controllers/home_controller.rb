@@ -1,6 +1,7 @@
 require 'google/apis/people_v1'
 require 'google/api_client/client_secrets.rb'
 require 'koala'
+require 'net/http'
 class HomeController < ApplicationController
 	People = Google::Apis::PeopleV1
 	def index
@@ -24,6 +25,9 @@ class HomeController < ApplicationController
 		    )
 		elsif current_user.present? && current_user.provider.eql?("facebook")
 		    # @user = User.koala(request.env["omniauth.auth"]['credentials'])
+		elsif current_user.present? && current_user.provider.eql?("github")
+			@github_hash = {repo_list: {}, clone_url: {}, ssh_url: {}}
+			@github_hash.merge!(repo_list: HTTParty.get(current_user.github_repo))
 		end
 	end
 end

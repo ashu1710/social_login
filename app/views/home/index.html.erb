@@ -15,4 +15,23 @@
 			<% end %>
 		</tbody>
 	</table>
+<% elsif current_user.present? && current_user.provider.eql?('github') %>
+	<table>
+		<thead>
+			<th>Full name</th>
+			<th>SSH URL</th>
+			<th>Clone Url</th>
+			<th>Default Branch</th>
+			<th>Push at</th>
+		</thead>
+		<tbody>
+			<% if @github_hash[:repo_list].present? %>
+				<%= render partial: "repo_details", collection: @github_hash[:repo_list], as: :repo_detail %>
+			<% else %>
+				<tr>
+					<td style="text-align: center;", colspan="3"> Data Not available </td>
+				</tr>
+			<% end %>
+		</tbody>
+	</table>
 <% end %>
